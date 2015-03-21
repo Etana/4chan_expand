@@ -1,6 +1,6 @@
-["resize", "scroll", "load"].forEach(function(b) {
+JSON.parse(localStorage['4chan-settings']||'{"imageExpansion":1}')["imageExpansion"] && ["resize", "scroll", "load"].forEach(function(b) {
   window.addEventListener(b, auto_enlarge)
-})
+});
 function auto_enlarge() {
   [].slice.call(document.querySelectorAll("a.fileThumb>img:first-child:not([data-clicked])")).forEach(function(b) {
     var c = window.innerWidth, d = window.innerHeight, a = b.getBoundingClientRect();
